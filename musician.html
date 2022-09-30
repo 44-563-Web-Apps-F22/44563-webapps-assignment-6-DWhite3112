@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Musician guess by DeAndre' White</title>
+    </head>
+ 
+<body>
+
+<h2>Getting input</h2>
+
+<form>
+    <label for="password">Enter the secret musician name </label>
+    <input type ="password" id="password" name="password" value="Jonh Lennon"> <br>
+
+    <label for="password">Guess the musician </label>
+    <input type ="text" id="to_check" name="text"> <br>
+
+    <input type="button" onclick="checkGuess()" value="Check the guess">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+var correct = 0
+var wrong = 0
+function checkGuess (){
+    console.log("Getting form values")
+    password = document.getElementById("password").value
+    guess = document.getElementById("to_check").value
+    
+    if(password == guess){
+        correct += 1
+        window.alert("You got it right")
+        document.getElementById("result").innerHTML = "Number of right answers"+correct
+        
+    } else {
+        wrong += 1
+        window.alert("Wrong Musican")
+        document.getElementById("result").innerHTML = "Number of Wrong answers"+ wrong;
+    }
+}
+</script>
+
+</body>
+</html> 
