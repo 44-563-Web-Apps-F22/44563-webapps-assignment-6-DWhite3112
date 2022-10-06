@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DeAndre White computes discounts</title>
+    </head>
+ 
+<body>
+
+<h2>Getting input</h2>
+
+<form>
+    <label for="base_amount">Enter base amount  </label>
+    <input type ="number" id="base_amount" name="base_amount" value= 20> <br>
+
+    <label for="discount_el">Enter discount percentage</label>
+    <input type ="number" id="discount_el" name="discount_el" value= 10> <br>
+
+    <input type="button" onclick="discount()" value="Apply discount">
+</form>
+
+
+<p id="result"></p>
+
+<script> 
+  
+function discount (){
+    base = document.getElementById("base_amount").value
+    disco = document.getElementById("discount_el").value
+    var result = base - ((disco/100) * base)
+    var term 
+    document.getElementById("result").innerHTML= "Discount amounts for: base " + base + " are: " + result+ " "
+    
+    for(var it = 2; it <6; it ++){
+    term = result * it
+    document.getElementById("result").innerHTML += term+" "
+   }
+}
+</script>
+<form>
+    <input type="radio" id="times" name="times" onclick="chooseOp()">
+    <label for="times">*</label></br>
+  
+    <input type="radio" id="divide" name="divide" onclick="chooseOp()">
+    <label for="divide">/</label></br>
+  
+    <input type="radio" id="exponent" name="exponent" onclick="chooseOp()">
+    <label for="exponent">Green**</label></br>
+    
+
+    <input type="button" onclick="chooseOp()" value="Get values from radio group">
+  </form>
+
+</body>
+</html> 
