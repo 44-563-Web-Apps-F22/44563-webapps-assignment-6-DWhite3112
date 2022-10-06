@@ -37,18 +37,43 @@ function discount (){
 }
 </script>
 <form>
-    <input type="radio" id="times" name="times" onclick="chooseOp()">
+    <input type="radio" id="times" name="calc" onclick="chooseOp()">
     <label for="times">*</label></br>
   
-    <input type="radio" id="divide" name="divide" onclick="chooseOp()">
+    <input type="radio" id="divide" name="calc" onclick="chooseOp()">
     <label for="divide">/</label></br>
   
-    <input type="radio" id="exponent" name="exponent" onclick="chooseOp()">
-    <label for="exponent">Green**</label></br>
+    <input type="radio" id="exponent" name="calc" onclick="chooseOp()">
+    <label for="exponent">**</label></br>
     
 
-    <input type="button" onclick="chooseOp()" value="Get values from radio group">
+    <input id ="butt" type="button" onclick="chooseOp()" value="choose one">
   </form>
+  <p id="resP6"></p>
+  <script>
+    function chooseOp(){
+        base = document.getElementById("base_amount").value
+        disco = document.getElementById("discount_el").value
+        const butt = document.getElementsByName("butt")
+        var finalCalc
+        if (document.getElementById("times").checked) {
+            finalCalc = base * disco
+            document.getElementById("resP6").innerHTML = finalCalc
+        }
+        if (document.getElementById("divide").checked) {
+            finalCalc = base / disco
+            document.getElementById("resP6").innerHTML = finalCalc  
+        } 
+          if (document.getElementById("exponent").checked) {
+            finalCalc = base ** disco
+            document.getElementById("resP6").innerHTML = finalCalc
+            
+          }  
+        
+          
+
+    }
+  </script>
 
 </body>
 </html> 
