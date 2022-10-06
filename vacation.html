@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DeAndre White selects a vacation</title>
+    </head>
+ 
+<body>
+
+<h2>Vacation seletion</h2>
+<form>
+    <input type="checkbox" id="check1" name="check1" value= "True"
+    <label for="check1">Travel by Air</label></br>
+  
+    <input type="checkbox" id="check2" name="check2" value="True">
+    <label for="check2">Domestic</label></br>
+  
+    <input type="checkbox" id="check3" name="check2" value="
+    False">
+    <label for="check3">Resort</label></br>
+    
+
+    <input type="button" onclick="selectVacation()" value="Select a vacation">
+</form>
+<p id="vacayStat"></p>
+<script>
+    var my_vacation = {}
+    function selectVacation(my_vacation = {}){
+        var check1 = document.getElementById("check1")
+        var check2 = document.getElementById("check2")
+        var check3 = document.getElementById("check3")
+        if (check1.checked == true) {
+            document.getElementById("check1").value = true
+            document.getElementById("vacayStat").innerHtml =  "Travel by air: " + document.getElementById("check1").value
+        }
+        else{
+            document.getElementById("check1").value = true
+            document.getElementById("vacayStat").innerHtml =  "Travel by air: " + document.getElementById("check1").value
+        }
+        if (check2.checked == true) {
+            document.getElementById("check2").value = true
+            document.getElementById("vacayStat").innerHtml +=  "Travel by air: " + document.getElementById("check2").value
+        }
+        else{
+            document.getElementById("check2").value = true
+            document.getElementById("vacayStat").innerHtml +=  "Travel by air: " + document.getElementById("check2").value
+        }
+        if (check3.checked == true) {
+            document.getElementById("check3").value = true
+            document.getElementById("vacayStat").innerHtml =  "Travel by air: " + document.getElementById("check3").value
+        }
+        else{
+            document.getElementById("check3").value = true
+            document.getElementById("vacayStat").innerHtml =  "Travel by air: " + document.getElementById("check3").value
+        }
+
+    }
+</script>
+<form>
+    <label for="form1_age">What is your age </label>
+    <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
+
+    <label for="form1_nick">What is your nickname </label>
+    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+
+    <input type="button" onclick="resolveForm()" value="Get values from form">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+function resolveForm (){
+    console.log("Getting form values")
+    age = document.getElementById("form1_age").value
+    nick = document.getElementById("form1_nick").value
+    confirmed = confirm("Are these the values? "+age+" and "+nick)
+    
+    out = document.getElementById("result")
+    if(confirmed){
+        out.innerHTML = "Values were confirmed"
+    } else {
+        out.innerHTML = "Values were not confirmed"
+    }
+}
+</script>
+
+</body>
+</html> 
